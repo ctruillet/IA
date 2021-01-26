@@ -37,6 +37,7 @@ public class Etape1 {
     * @param x parametre servant pour definir la base qui representera le probleme 
     */
     public void majBase(int x) {
+        // ToDo
         // A ECRIRE par les etudiants en utilisant le contenu de g
         // ajout possible de parametre => modifier aussi l'appel ds le main
     }
