@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path=""/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/home/lagasq/enseignement/IA-RO-CSP/IA-resolutionPb/tp/aUtiliser/projet/gnu.jar"/>
+	<classpathentry kind="lib" path="/home/lagasq/enseignement/IA-RO-CSP/IA-resolutionPb/tp/aUtiliser/projet/org.jar"/>
+	<classpathentry kind="lib" path="/home/lagasq/enseignement/IA-RO-CSP/IA-resolutionPb/tp/aUtiliser/projet/outils.jar"/>
+	<classpathentry kind="lib" path="/home/lagasq/enseignement/IA-RO-CSP/IA-resolutionPb/tp/aUtiliser/projet/solvers.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Utilisateur/Documents/Julie_UPSSITECH/2A/IA/TP/workspace/gnu.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Utilisateur/Documents/Julie_UPSSITECH/2A/IA/TP/workspace/org.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Utilisateur/Documents/Julie_UPSSITECH/2A/IA/TP/workspace/outils.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Utilisateur/Documents/Julie_UPSSITECH/2A/IA/TP/workspace/solvers.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="file:/C:/Users/Utilisateur/Documents/Julie_UPSSITECH/2A/IA/TP/workspace/aUtiliser-v2/Doc/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="output" path=""/>
+</classpath>
