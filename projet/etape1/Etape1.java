@@ -37,8 +37,31 @@ public class Etape1 {
     * @param x parametre servant pour definir la base qui representera le probleme 
     */
     public void majBase(int x) {
-        // A ECRIRE par les etudiants en utilisant le contenu de g
-        // ajout possible de parametre => modifier aussi l'appel ds le main
+        this.base.clear();
+        this.nbVariables = 0;
+
+        ArrayList<Integer> sommets = this.g.getSommets();        
+        for(int sommet : sommets) {
+            int s = sommet * x + 1;
+            ArrayList<Integer> adjacents = this.g.getAdjacents(sommet);
+            for(int adjacent : adjacents) {
+                int ad = adjacent * x + 1;
+                for(int couleur = 0 ; couleur < x ; couleur++) {
+                    // couleurs adjacente diférente
+                    this.base.add(new ArrayList<Integer>(Arrays.asList(-(s + couleur), -(ad + couleur))));
+                }
+            }
+            ArrayList<Integer> couleurs = new ArrayList<Integer>();
+            for(int couleur = 0 ; couleur < x ; couleur++) {
+                // un sommet = 1 seule couleur
+                this.base.add(new ArrayList<Integer>(Arrays.asList(-(s + couleur) , -(s + ((couleur + 1) % x)))));
+                couleurs.add(s+couleur);
+            }
+            // un sommet a une couleur
+            
+            this.base.add(couleurs);
+            this.nbVariables = s + x - 1;
+        }       
     }
     
     /** methode d'appel du solver sur la base de clauses representant le pb traite
@@ -71,6 +94,7 @@ public class Etape1 {
         e.majBase(3) ;
         e.affBase() ;
         System.out.println("Resultat obtenu (on attend true) :"+e.execSolver()) ;
+        System.out.println("");
         
     
         // TEST 2 : town10.txt avec 2 couleurs
@@ -78,14 +102,16 @@ public class Etape1 {
         e.majBase(2) ;
         e.affBase() ;
         System.out.println("Resultat obtenu (on attend false) :"+e.execSolver()) ;
-        
+        System.out.println("");
+
     
         // TEST 3 : town10.txt avec 4 couleurs
         System.out.println("Test sur fichier town10.txt avec 4 couleurs") ;
         e.majBase(4) ;
         e.affBase() ;
         System.out.println("Resultat obtenu (on attend true) :"+e.execSolver()) ;
-               
+        System.out.println("");  
+
     
         // TEST 4 : flat20_3_0.col avec 4 couleurs
         System.out.println("Test sur fichier flat20_3_0.col avec 4 couleurs") ;
@@ -93,20 +119,24 @@ public class Etape1 {
         e.majBase(4) ;
         //e.affBase() ;
         System.out.println("Resultat obtenu (on attend true) :"+e.execSolver()) ;
+        System.out.println("");
     
+        
         // TEST 5 : flat20_3_0.col avec 3 couleurs
         System.out.println("Test sur fichier flat20_3_0.col avec 3 couleurs") ;
         e.majBase(3) ;
         //e.affBase() ;
         System.out.println("Resultat obtenu (on attend true) :"+e.execSolver()) ;
+        System.out.println("");
     
+        
         // TEST 6 : flat20_3_0.col avec 2 couleurs
         System.out.println("Test sur fichier flat20_3_0.col avec 2 couleurs") ;
         e.majBase(2) ;
         //e.affBase() ;
         System.out.println("Resultat obtenu (on attend false) :"+e.execSolver()) ;
+        System.out.println("");
         
-               
     
         // TEST 7 : jean.col avec 10 couleurs
         System.out.println("Test sur fichier jean.col avec 10 couleurs") ;
@@ -114,18 +144,23 @@ public class Etape1 {
         e.majBase(10) ;
         //e.affBase() ;
         System.out.println("Resultat obtenu (on attend true) :"+e.execSolver()) ;
+        System.out.println("");
+
     
         // TEST 9 : jean.col avec 9 couleurs
         System.out.println("Test sur fichier jean.col avec 9 couleurs") ;
         e.majBase(9) ;
         //e.affBase() ;
         System.out.println("Resultat obtenu (on attend false) :"+e.execSolver()) ;
+        System.out.println("");
+
     
         // TEST 8 : jean.col avec 3 couleurs
         System.out.println("Test sur fichier jean.col avec 3 couleurs") ;
         e.majBase(3) ;
         //e.affBase() ;
         System.out.println("Resultat obtenu (on attend false) :"+e.execSolver()) ;
+        System.out.println("");
         
     }
 }
