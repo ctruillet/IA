@@ -40,28 +40,27 @@ public class Etape1 {
         this.base.clear();
         this.nbVariables = 0;
 
-        ArrayList<Integer> sommets = this.g.getSommets();     
-
-        for(int sommet : sommets) {
+        //Parcours des sommets
+        for(int sommet : this.g.getSommets()) {
             int s = sommet * x + 1;
-            ArrayList<Integer> adjacents = this.g.getAdjacents(sommet);
+		
+		 //Deux sommets adjacents ont une couleur différente
+            for(int adjacent : this.g.getAdjacents(sommet)) {
+                int adj = adjacent * x + 1;
 
-            for(int adjacent : adjacents) {
-                int ad = adjacent * x + 1;
-
-                // Deux sommets adjacents ont une couleur différente
                 for(int couleur = 0 ; couleur < x ; couleur++) {
-                    this.base.add(new ArrayList<Integer>(Arrays.asList(-(s + couleur), -(ad + couleur))));
+                    this.base.add(new ArrayList<Integer>(Arrays.asList(-(s + couleur), -(adj+ couleur))));
                 }
             }
 
+
+		 // Un sommet a une seule et unique couleur
             ArrayList<Integer> couleurs = new ArrayList<Integer>();
+            
             for(int couleur = 0 ; couleur < x ; couleur++) {
-                // un sommet = 1 seule couleur
                 this.base.add(new ArrayList<Integer>(Arrays.asList(-(s + couleur) , -(s + ((couleur + 1) % x)))));
                 couleurs.add(s+couleur);
             }
-            // un sommet a une couleur
             
             this.base.add(couleurs);
             this.nbVariables = s + x - 1;
