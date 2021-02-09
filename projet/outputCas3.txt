@@ -1,0 +1,98 @@
+======== TEST CAS 1 10 villes de 0 a 9 : 
+
+0-1-4-8-9
+la lg du plus court chemin est 1190.971503412202
+Etat courant : 9
+=======(nb d'etats explores = 7)========
+=======(nb d'etats generes = 21)========
+
+======== TEST CAS 1 10 villes de 5 a 9 : 
+
+5-6-8-9
+la lg du plus court chemin est 858.6177055898913
+Etat courant : 9
+=======(nb d'etats explores = 5)========
+=======(nb d'etats generes = 37)========
+
+======== TEST CAS 1 10 villes de 2 a 9 : 
+
+2-3-6-8-9
+la lg du plus court chemin est 1090.639192762493
+Etat courant : 9
+=======(nb d'etats explores = 10)========
+=======(nb d'etats generes = 68)========
+
+======== TEST CAS 1 10 villes de 1 a 7 : 
+
+1-3-6-7
+la lg du plus court chemin est 889.1949043390727
+Etat courant : 7
+=======(nb d'etats explores = 5)========
+=======(nb d'etats generes = 82)========
+
+======== TEST CAS 1 26 villes de 0 a 25 : 
+
+0-3-5-12-16-19-24-25
+la lg du plus court chemin est 1856.5
+Etat courant : 25
+=======(nb d'etats explores = 20)========
+=======(nb d'etats generes = 158)========
+
+======== TEST CAS 1 146 villes de 0 a 145 : 
+
+0-5-45-69-89-111-133-145
+la lg du plus court chemin est 1143.0000000000002
+Etat courant : 145
+=======(nb d'etats explores = 150)========
+=======(nb d'etats generes = 1485)========
+
+======== TEST CAS 1 1000 villes : 
+
+0-126-261-386-646-829-964-997
+la lg du plus court chemin est 726.7
+Etat courant : 997
+=======(nb d'etats explores = 1000)========
+=======(nb d'etats generes = 46347)========
+
+======== TEST CAS 2 10 villes de 0 a 9 : 
+
+0-1-3-4-8-9-7-6-5-2-0
+la lg du plus court chemin est 3792.190362007193
+Etat courant : 0
+=======(nb d'etats explores = 302)========
+=======(nb d'etats generes = 46682)========
+
+======== TEST CAS 3 6 villes de 0 a 5 : 
+
+0-1-2-3-5-4-0
+la lg du plus court chemin est 1360.6495955560758
+Etat courant : 0
+=======(nb d'etats explores = 99)========
+=======(nb d'etats generes = 46884)========
+
+======== TEST CAS 3 7 villes de 0 a 6 : 
+
+0-1-2-3-6-5-4-0
+la lg du plus court chemin est 1638.459980067224
+Etat courant : 0
+=======(nb d'etats explores = 350)========
+=======(nb d'etats generes = 47701)========
+
+======== TEST CAS 3 8 villes de 0 a 7 : 
+
+0-4-5-7-6-3-2-1-0
+la lg du plus court chemin est 1729.6228205017967
+Etat courant : 0
+=======(nb d'etats explores = 936)========
+=======(nb d'etats generes = 50388)========
+
+======== TEST CAS 3 9 villes de 0 a 8 : 
+
+0-1-2-3-6-7-5-8-4-0
+la lg du plus court chemin est 1855.2162397331167
+Etat courant : 0
+=======(nb d'etats explores = 3263)========
+=======(nb d'etats generes = 60974)========
+
+======== TEST CAS 3 10 villes de 0 a 9 : 
+

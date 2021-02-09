@@ -126,7 +126,7 @@ public class EtatCas1 implements Etat {
         if(this.equals(o))
             return 0;
 
-            return (this.tg.dist(this.etat, this.lieuArrivee) <= this.tg.dist(((EtatCas1)o).getEtat(),((EtatCas1)o).lieuArrivee)?-1:1);
+        return (this.tg.dist(this.etat, this.lieuArrivee) <= this.tg.dist(((EtatCas1)o).getEtat(),((EtatCas1)o).lieuArrivee)?-1:1);
     }
 
     // methodes pour pouvoir utiliser cet objet dans des listes et des map
@@ -162,7 +162,7 @@ public class EtatCas1 implements Etat {
     */
     public String toString() {
         String s = "";
-        s = "Etat courant : " + this.etat + "\n";
+        s = "Etat courant : " + this.etat;
         return s ;
     }
 
