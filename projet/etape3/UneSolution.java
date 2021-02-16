@@ -4,19 +4,19 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Random ;
+import java.util.ArrayList;
+import java.util.Collections;
 
 import outils.* ;
 
 /** Classe pour definir une solution pour le cas 3 de la tache 2
 */
 public class UneSolution implements Solution {
-
-  
     // attributs
-    // A COMPLETER
     // //////////////////////////////////////////////
     /** le graphe representant le monde */
     GrapheDeLieux tg;
+    ArrayList<Integer> cycle = new ArrayList<>();
     
     // constructeurs
     // A ECRIRE/COMPLETER
@@ -25,10 +25,19 @@ public class UneSolution implements Solution {
     * @param tg graphe representant le monde
     */
     public UneSolution(GrapheDeLieux tg) {
-        // A ECRIRE
-    }
-    // A COMPLETER AVEC d'AUTRES CONSTRUCTEURS si necessaire
+        this.tg = tg;
 
+        this.cycle.clear();
+        for(int i = 0; i<tg.getNbSommets(); i++){
+            this.cycle.add(i);
+        }
+        this.cycle.add(0);
+    }
+
+    public UneSolution(GrapheDeLieux tg, ArrayList<Integer> cycle){
+        this.tg = tg;
+        this.cycle = cycle;
+    }
 
     // methodes de l'interface Solution
     // //////////////////////////////////////////////
@@ -37,7 +46,17 @@ public class UneSolution implements Solution {
     */
     public List<Solution> lesVoisins() {
         // A ECRIRE et MAJ la valeur retournee
-    	return null ;
+        List<Solution> listeSol = new ArrayList<Solution>() ;
+        for (int i = 0; i < this.tg.getNbSommets(); i++) {
+            Solution solution = nelleSolution();
+            if(!this.cycle.contains(solution)) {
+                listeSol.add(solution);
+            }
+            else{//retour en arrière
+                i--;
+            }
+        }
+        return listeSol ;
     }
 
     /** methode recuperant un voisin de la solution courante
@@ -45,15 +64,26 @@ public class UneSolution implements Solution {
     */
     public List<Solution> unVoisin() {
         // A ECRIRE et MAJ la valeur retournee
-    	return null ;
+        List<Solution> listeSol = new ArrayList<Solution>();
+        Solution solution = this.nelleSolution();
+        listeSol.add(solution);
+        
+        return listeSol ;
     }
 
     /** methode recuperant la valeur de la solution courante
     * @return valeur de la solution courante
     */
     public double eval() {
-        // A ECRIRE et MAJ la valeur retournee
-        return 0;
+        double poid = 0;
+        if(this.cycle.size() <= 1){
+            return poid;
+        }
+
+        for (int i=1; i<this.cycle.size(); i++){
+            poid += this.tg.dist(this.cycle.get(i-1),this.cycle.get(i));
+        }
+        return poid;
     }
     
     /** methode generant aleatoirement une nouvelle solution 
@@ -61,14 +91,25 @@ public class UneSolution implements Solution {
     * @return nouvelle solution generee aleatoirement a partir de la solution courante
     */
     public Solution nelleSolution() {
-    	// A ECRIRE et MAJ la valeur retournee
-    	return null ;
+        int random1=0, random2=0;
+        ArrayList<Integer> newCycle = new ArrayList<Integer>(this.cycle);
+
+        do{
+            random1 = new Random().nextInt(newCycle.size());
+            random2 = new Random().nextInt(newCycle.size());
+
+        }while(random1 == 0 || random2 == 0 || random1 == random2 || random1 == newCycle.size() -1 || random2 == newCycle.size() -1);
+
+        Collections.swap(newCycle, random1, random2);
+
+    	return new UneSolution(this.tg, newCycle);
     }
     
     /** methode affichant la solution courante comme un chemin dans le graphe
     */
     public void displayPath() {
-        // A ECRIRE
+        System.out.println("PATH : " + this.cycle);
+        
     }
 
 
@@ -79,8 +120,7 @@ public class UneSolution implements Solution {
     * @return code de hachage
     */
     public int hashCode() {
-	// A ECRIRE et MODIFIER le return en consequence
-        return 0 ;
+        return this.tg.hashCode() + 4 * this.cycle.hashCode();
     }
 
     /** methode de comparaison de la solution courante avec l'objet o
@@ -88,8 +128,9 @@ public class UneSolution implements Solution {
     * @return true si la solution courante et o sont egaux, false sinon
     */
     public boolean equals(Object o) {
-	// A ECRIRE et MODIFIER le return en consequence
-        return false ;
+        if (! (o instanceof UneSolution))
+            return false;
+        return (this.hashCode() == ((UneSolution)o).hashCode());    
     }
     
 
@@ -101,8 +142,7 @@ public class UneSolution implements Solution {
     *         chaine de caracteres
     */
     public String toString() {
-	// A ECRIRE et MODIFIER le return en consequence
-        return null ;
+        return this.cycle.toString() + "\n" + "Cout Total : " + this.eval() + "\n";
     }
 
 }
