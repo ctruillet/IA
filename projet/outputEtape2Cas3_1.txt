@@ -6,6 +6,7 @@ Etat courant : 9
 =======(nb d'etats explores = 7)========
 =======(nb d'etats generes = 21)========
 
+Temps d'execution : 120.7603ms
 ======== TEST CAS 1 10 villes de 5 a 9 : 
 
 5-6-8-9
@@ -14,6 +15,7 @@ Etat courant : 9
 =======(nb d'etats explores = 5)========
 =======(nb d'etats generes = 37)========
 
+Temps d'execution : 0.6498ms
 ======== TEST CAS 1 10 villes de 2 a 9 : 
 
 2-3-6-8-9
@@ -22,6 +24,7 @@ Etat courant : 9
 =======(nb d'etats explores = 10)========
 =======(nb d'etats generes = 68)========
 
+Temps d'execution : 0.8573ms
 ======== TEST CAS 1 10 villes de 1 a 7 : 
 
 1-3-6-7
@@ -30,6 +33,7 @@ Etat courant : 7
 =======(nb d'etats explores = 5)========
 =======(nb d'etats generes = 82)========
 
+Temps d'execution : 0.6018ms
 ======== TEST CAS 1 26 villes de 0 a 25 : 
 
 0-3-5-12-16-19-24-25
@@ -38,6 +42,7 @@ Etat courant : 25
 =======(nb d'etats explores = 20)========
 =======(nb d'etats generes = 158)========
 
+Temps d'execution : 8.0059ms
 ======== TEST CAS 1 146 villes de 0 a 145 : 
 
 0-5-45-69-89-111-133-145
@@ -46,6 +51,7 @@ Etat courant : 145
 =======(nb d'etats explores = 150)========
 =======(nb d'etats generes = 1485)========
 
+Temps d'execution : 61.5859ms
 ======== TEST CAS 1 1000 villes : 
 
 0-126-261-386-646-829-964-997
@@ -54,6 +60,7 @@ Etat courant : 997
 =======(nb d'etats explores = 1000)========
 =======(nb d'etats generes = 46347)========
 
+Temps d'execution : 299.224ms
 ======== TEST CAS 2 10 villes de 0 a 9 : 
 
 0-1-3-4-8-9-7-6-5-2-0
@@ -62,6 +69,7 @@ Etat courant : 0
 =======(nb d'etats explores = 302)========
 =======(nb d'etats generes = 46682)========
 
+Temps d'execution : 44.2599ms
 ======== TEST CAS 3 6 villes de 0 a 5 : 
 
 0-1-2-3-5-4-0
@@ -70,6 +78,7 @@ Etat courant : 0
 =======(nb d'etats explores = 99)========
 =======(nb d'etats generes = 46884)========
 
+Temps d'execution : 54.9183ms
 ======== TEST CAS 3 7 villes de 0 a 6 : 
 
 0-1-2-3-6-5-4-0
@@ -78,6 +87,7 @@ Etat courant : 0
 =======(nb d'etats explores = 350)========
 =======(nb d'etats generes = 47701)========
 
+Temps d'execution : 90.2709ms
 ======== TEST CAS 3 8 villes de 0 a 7 : 
 
 0-4-5-7-6-3-2-1-0
@@ -86,6 +96,7 @@ Etat courant : 0
 =======(nb d'etats explores = 936)========
 =======(nb d'etats generes = 50388)========
 
+Temps d'execution : 2345.6652ms
 ======== TEST CAS 3 9 villes de 0 a 8 : 
 
 0-1-2-3-6-7-5-8-4-0
@@ -94,5 +105,6 @@ Etat courant : 0
 =======(nb d'etats explores = 3263)========
 =======(nb d'etats generes = 60974)========
 
+Temps d'execution : 276336.0925ms
 ======== TEST CAS 3 10 villes de 0 a 9 : 
 

@@ -22,11 +22,11 @@ public class Etape2 {
         // tests sur CAS 1 : entre 2 villes donnees
         // ///////////////////////////////////////
         // cas : 10 villes de 0 à 9
-        startTime = System.nanoTime();
         GrapheDeLieux tg = GrapheDeLieux.loadGraph("../Data/town10.txt",true) ;
         EtatCas1 cas1 = new EtatCas1(tg) ;
         System.out.println("======== TEST CAS 1 10 villes de 0 a 9 : \n");
         // choisir ici un algo et l'executer 
+        startTime = System.nanoTime();
         sAE.aStar(cas1);
         timeElapsed = System.nanoTime() - startTime;
         System.out.println("Temps d'execution : " + timeElapsed / 1000000.0 + "ms");
